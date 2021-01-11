@@ -1,0 +1,134 @@
+\documentclass[a4paper,10pt]{article}
+
+%A Few Useful Packages
+\usepackage{marvosym}
+\usepackage{fontspec} 					%for loading fonts
+\usepackage{xunicode,xltxtra,url,parskip} 	%other packages for formatting
+\RequirePackage{color,graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[big]{layaureo} 				%better formatting of the A4 page
+% an alternative to Layaureo can be ** \usepackage{fullpage} **
+\usepackage{supertabular} 				%for Grades
+\usepackage{titlesec}					%custom \section
+
+%Setup hyperref package, and colours for links
+\usepackage{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour, linkcolor=linkcolour}
+
+%FONTS
+\defaultfontfeatures{Mapping=tex-text}
+%\setmainfont[SmallCapsFont = Fontin SmallCaps]{Fontin}
+%%% modified for Karol Kozioł for ShareLaTeX use
+\setmainfont[
+SmallCapsFont = Fontin-SmallCaps.otf,
+BoldFont = Fontin-Bold.otf,
+ItalicFont = Fontin-Italic.otf
+]
+{Fontin.otf}
+%%%
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{3pt}{3pt}
+%Tweak a bit the top margin
+%\addtolength{\voffset}{-1.3cm}
+
+%Italian hyphenation for the word: ''corporations''
+\hyphenation{im-pre-se}
+
+%-------------WATERMARK TEST [**not part of a CV**]---------------
+\usepackage[absolute]{textpos}
+
+\setlength{\TPHorizModule}{30mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{2mm}{0.65\paperheight}
+\setlength{\parindent}{0pt}
+
+%--------------------BEGIN DOCUMENT----------------------
+\begin{document}
+
+%WATERMARK TEST [**not part of a CV**]---------------
+%\font\wm=''Baskerville:color=787878'' at 8pt
+%\font\wmweb=''Baskerville:color=FF1493'' at 8pt
+%{\wm 
+%	\begin{textblock}{1}(0,0)
+%		\rotatebox{-90}{\parbox{500mm}{
+%			Typeset by Alessandro Plasmati with \XeTeX\  \today\ for 
+%			{\wmweb \href{http://www.aleplasmati.comuv.com}{aleplasmati.comuv.com}}
+%		}
+%	}
+%	\end{textblock}
+%}
+
+\pagestyle{empty} % non-numbered pages
+
+\font\fb=''[cmr10]'' %for use with \LaTeX command
+
+%--------------------TITLE-------------
+\par{\centering
+		{\Huge Hardik \textsc{Aggarwal}
+	}\bigskip\par}
+
+%--------------------SECTIONS-----------------------------------
+%Section: Personal Data
+\section{Personal Data}
+
+\begin{tabular}{rl}
+    \textsc{Place and Date of Birth:} & New Delhi, India  | 24 July 2000 \\
+    \textsc{Address:}   & Azad Hall of Residence , E-110, Kharagpur, West Bengal \\
+    \textsc{Phone:}     & 7042952447\\
+    \textsc{email:}     & \href{mailto:hardik8464@gmail.com}{hardik8464@gmail.com}
+\end{tabular}
+
+%Section: Work Experience at the top
+\section{Work Experience}
+\begin{tabular}{r|p{11cm}}
+ \textsc{May-June 2019}&\emph{Kharagpur RoboSoccer Student's Research Group}\\&\footnotesize{The research objective of the group is to build and study cooperative multi-agent systems in the highly dynamic adversarial environment of RoboSoccer. Particularly, I work on co-ordinated -behaviour and the FSM architecture based codebase.}\\\multicolumn{2}{c}{} \\
+ 
+\end{tabular}
+
+%Section: Education
+\section{Education}
+\begin{tabular}{rl}	
+ \textsc{July 2018-Present} & Bachelor of Technology in \textsc{Computer Science and Engineering}\\
+&\normalsize \textsc  \textbf{IIT Kharagpur}, India     -     {Cgpa}: 9.58/10\\&\\
+\textsc{July} 2018& All India Senior School Certificate Examination, \normalsize\textbf{M A Public School}, New Delhi\\
+&\normalsize \textsc{Percentage}: 97.4\\&\\
+\textsc{July} 2018& All India Secondary School Examination, \normalsize\textbf{M A Public School}, New Delhi\\
+&\normalsize \textsc{Cgpa}: 10.0/10.0\\
+\end{tabular}
+
+%Section: Scholarships and additional info
+\section{Awards and Achievements}
+\begin{tabular}{rl}
+ \textsc{Sept.} 2018 &Aditya Birla Scholarship Award -Given to Top 16 Engineering Students across India\normalsize\\
+ \textsc {Feb.}2018 &KVPY Fellow -SX 2018\normalsize\\
+ \textsc{June} 2018 &JEE Advanced -AIR-240 \normalsize\\
+ \textsc{April} 2018 &JEE Main -AIR -568 \normalsize\\
+\end{tabular}
+
+\section{Computer Skills}
+\begin{tabular}{rl}
+Computer Languages:&  C,    C++,   Python\\
+ Basic Knowledge:& my\textsc{sql}, \textsc{html}, \textsc{Linux},\textsc{CSS}, ubuntu, {\fb \LaTeX}\setmainfont[SmallCapsFont=Fontin-SmallCaps.otf]{Fontin.otf}\\
+Tools and Libraries:& \textsc{ROS}, OpenCV ,   numpy  , Tkinter ,Beautiful Soup\\
+\end{tabular}
+
+\section{Interests and Activities}
+Open-Source, Competetive Programming , 
+Path Planning ,Data Science \\
+Football, Travelling
+
+\section{Relevent Coursework}
+Algorithms I(T/L)*,Discrete Structures(T)*,Programming and Data Structures(T/L)\\
+Online Courses - Algorithmic Toolbox , Algorithms on Graphs , Data Structures ,\\Using Python To Access Web Data ,  
+Using DataBases With Python , Applied Machine Learning With Python *\\
+*:Ongoing, T: Theory, L: Laboratory
+%\newpage
+%\hypertarget{gmat}{\textsc{Gmat}\setmainfont{LMRoman10 Regular}\textregistered\setmainfont[SmallCapsFont=Fontin-SmallCaps]{Fontin-Regular}}
+
+%\XeTeXpdffile ''GMAT.pdf'' page 1 scaled 800
+
+\end{document}
